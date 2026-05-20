@@ -12,6 +12,11 @@
         font-family: 'Arial', sans-serif;
         position: relative;
         overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
       }
 
       body::before {
@@ -30,17 +35,43 @@
       p {
         position: relative;
         z-index: 2;
+        text-align: center;
+        color: #00bfff;
+        font-size: 24px;
+        text-shadow: 0 0 20px rgba(0, 191, 255, 0.8), 0 0 40px rgba(138, 43, 226, 0.6);
       }
 
       div {
         position: relative;
         z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      img {
+        height: 200px;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+        border: 2px solid rgba(0, 191, 255, 0.5);
+      }
+
+      img:hover {
+        box-shadow: 0 0 40px rgba(0, 191, 255, 0.8), 0 0 60px rgba(138, 43, 226, 0.6);
+        border-color: #ffd700;
+        transform: scale(1.1);
       }
 
       a {
         text-decoration: none;
         display: inline-block;
         transition: all 0.3s ease;
+        color: #ffd700;
+        font-size: 20px;
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
       }
 
       a:hover {
@@ -50,8 +81,9 @@
     </style>
   </head>
   <body>
-    <p>testing</p>
     <div>
+      <img src="i/logo.png" alt="sketch games logo">
+      <p>testing</p>
       <a href="/games/">games</a>
     </div>
   </body>
