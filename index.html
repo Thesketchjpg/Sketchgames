@@ -12,8 +12,9 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #000;
-      color: #ccc;
+      background: linear-gradient(135deg, #0a0015 0%, #1a0033 50%, #2d0052 100%);
+      background-attachment: fixed;
+      color: #00bfff;
       font-family: 'Arial', sans-serif;
       height: 100vh;
       display: flex;
@@ -21,11 +22,26 @@
       overflow: hidden;
     }
 
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(0, 191, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
     iframe {
       flex: 1;
       width: 100%;
       border: none;
       display: block;
+      position: relative;
+      z-index: 1;
     }
 
     nav {
@@ -49,7 +65,8 @@
       font-family: 'Parkinsans', sans-serif;
       font-weight: 800;
       font-size: 1rem;
-      color: #fff;
+      color: #00bfff;
+      text-shadow: 0 0 20px rgba(0, 191, 255, 0.8), 0 0 40px rgba(138, 43, 226, 0.6);
       letter-spacing: -0.01em;
       pointer-events: none;
     }
@@ -68,12 +85,14 @@
 
     nav button:hover {
       background: rgba(255, 255, 255, 0.06);
-      color: #bbb;
+      color: #00bfff;
+      text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
     }
 
     nav button.active {
-      background: rgba(88, 88, 195, 0.2);
-      color: #a0a0ff;
+      background: rgba(0, 191, 255, 0.2);
+      color: #00bfff;
+      text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
     }
   </style>
 </head>
