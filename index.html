@@ -1,17 +1,58 @@
-<DOCTYPE html>
-  <html>
-    <head>
-    <title>
-      sketch games
-    </title>
-      <link rel="icon" type="image/x-icon" href="favicon.png">
-    </head>
-    <body>
-      <p> testing</p>
-<div>
-  <a href="/games/"> games</a>
-</div>
-    </body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sketch games</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <style>
+      body {
+        background: linear-gradient(135deg, #0a0015 0%, #1a0033 50%, #2d0052 100%);
+        background-attachment: fixed;
+        margin: 0;
+        padding: 20px;
+        font-family: 'Arial', sans-serif;
+        position: relative;
+        overflow-x: hidden;
+      }
 
-    
-  </html>
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(0, 191, 255, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      p {
+        position: relative;
+        z-index: 2;
+      }
+
+      div {
+        position: relative;
+        z-index: 2;
+      }
+
+      a {
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+
+      a:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2);
+      }
+    </style>
+  </head>
+  <body>
+    <p>testing</p>
+    <div>
+      <a href="/games/">games</a>
+    </div>
+  </body>
+</html>
