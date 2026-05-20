@@ -80,7 +80,7 @@
   <body>
     <h1>Sketch Games, by TheSketchjpg and xhbshefj</h1>
     <h2>Play your Favorite games here</h2>
-    <div>
+    <div id="gamesContainer">
       <a href="/games/1.html"><img src="/i/1.png" alt="bad piggies"></a>
       <a href="/games/2.html"><img src="/i/2.png" alt="geometry dash"></a>
       <a href="/games/3.html"><img src="/i/3.png" alt="FNAF"></a>
@@ -88,6 +88,20 @@
       <a href="/games/5.html"><img src="/i/5.png" alt="Crazy Cattle 3D"></a>
       <a href="/games/6.html"><img src="/i/6.png" alt="Crossy Road"></a>
       <a href="/games/7.html"><img src="/i/7.png" alt="new game"></a>
-     </div>
+    </div>
+
+    <script>
+      // Sort games alphabetically by alt text
+      const container = document.getElementById('gamesContainer');
+      const games = Array.from(container.children);
+      
+      games.sort((a, b) => {
+        const altA = a.querySelector('img').alt.toLowerCase();
+        const altB = b.querySelector('img').alt.toLowerCase();
+        return altA.localeCompare(altB);
+      });
+      
+      games.forEach(game => container.appendChild(game));
+    </script>
   </body>
 </html>
